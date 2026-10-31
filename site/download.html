@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Download · HubidubiCash</title>
+  <meta name="description" content="HubidubiCash for Android, Mac and Linux: free and open source.">
+  <meta name="theme-color" content="#F4F3EE" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#262624" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://hubidubicash.example/download.html">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+  <section class="page-head">
+    <h1>Download</h1>
+    <p class="lede">HubidubiCash is free and open source. The first release is on its way to Google Play and GitHub; until then, build it from its source in a few minutes.</p>
+  </section>
+
+  <section class="section section-near">
+    <ul class="cards cards-3">
+      <li class="card platform" id="android">
+        <h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2"></rect><path d="M11 18h2"></path></svg>Android</h2>
+        <dl><dt>Needs</dt><dd>Android 8 or later</dd><dt>Price</dt><dd>Free</dd><dt>From</dt><dd>Google Play, soon</dd></dl>
+        <p>Home-screen widgets for a spending in one or two taps.</p>
+      </li>
+      <li class="card platform" id="mac">
+        <h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1.5"></rect><path d="M2 19h20"></path></svg>Mac</h2>
+        <dl><dt>Needs</dt><dd>macOS 12 or later</dd><dt>Price</dt><dd>Free</dd><dt>From</dt><dd>GitHub releases, soon</dd></dl>
+        <a class="btn btn-quiet" href="https://github.com/HubidubiPlanner/hubidubicash/releases">Releases</a>
+      </li>
+      <li class="card platform" id="linux">
+        <h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6l6 6-6 6M12 18h8"></path></svg>Linux</h2>
+        <dl><dt>Needs</dt><dd>Linux on x86_64</dd><dt>Price</dt><dd>Free</dd><dt>From</dt><dd>GitHub releases, soon</dd></dl>
+        <a class="btn btn-quiet" href="https://github.com/HubidubiPlanner/hubidubicash/releases">Releases</a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section" aria-labelledby="build-h">
+    <div class="section-head">
+      <h2 id="build-h">Build it yourself</h2>
+      <p>You need a JDK 17. For the phone app, the Android SDK too.</p>
+    </div>
+    <ol class="numbered">
+      <li><h3>Get the source</h3><p><code>git clone https://github.com/HubidubiPlanner/hubidubicash.git</code></p></li>
+      <li><h3>Build the phone app</h3><p><code>cd hubidubicash/src/apps &amp;&amp; ./gradlew :android:assembleDebug</code>, then install the APK it makes on your phone.</p></li>
+      <li><h3>Or the computer app</h3><p><code>./gradlew :desktop:packageDmg</code> on a Mac, <code>./gradlew :desktop:packageDeb</code> on Linux.</p></li>
+    </ol>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/favicon.svg" alt="" width="24" height="24">HubidubiCash</a>
+    <nav aria-label="Footer">
+      <a href="download.html">Download</a>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="https://github.com/HubidubiPlanner/hubidubicash">Source code</a>
+      <a href="https://contact.hubidubicash.example">Contact</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

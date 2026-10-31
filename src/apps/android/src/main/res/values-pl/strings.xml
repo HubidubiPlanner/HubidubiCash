@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="spending_widget_label">Nowy wydatek</string>
+    <string name="kind_widget_label">Jeden rodzaj wydatku</string>
+</resources>

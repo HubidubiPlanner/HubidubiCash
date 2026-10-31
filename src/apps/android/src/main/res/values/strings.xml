@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">HubidubiCash</string>
+    <string name="spending_widget_label">New spending</string>
+    <string name="kind_widget_label">One kind of spending</string>
+</resources>

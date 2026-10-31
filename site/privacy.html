@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy · HubidubiCash</title>
+  <meta name="description" content="HubidubiCash has no servers, no internet permission and collects no data. What the app stores, and where.">
+  <meta name="theme-color" content="#F4F3EE" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#262624" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://hubidubicash.example/privacy.html">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap doc-layout">
+  <article class="doc">
+    <h1>Privacy Policy</h1>
+    <p class="meta">Effective 31 October 2026 · the HubidubiCash apps for Android, macOS and Linux, and this website</p>
+    <div class="summary">
+      <p><strong>HubidubiCash never goes online.</strong> The apps have no internet permission and we, the developer, have no servers. We do not collect, receive, store, sell or share any of your data. The apps are open source, so anyone can check what they do.</p>
+      <p>Your spendings, regular income and bills stay on the device you typed them on. They leave it only as a backup file you make yourself, sealed with your password.</p>
+    </div>
+
+    <h2 id="what-the-app-stores">What the app stores, and where</h2>
+    <p>Everything you put into HubidubiCash is stored on the device you put it on: your spendings, your regular income and spendings, what you ticked in Bills, and your settings. On Android it lives in the app's private storage, which Android encrypts with the rest of the phone, and the app opts out of Android's cloud backup. On a Mac it lives in <code>~/Library/Application Support/HubidubiCash</code>, on Linux in <code>~/.local/share/hubidubicash</code>, inside your own user account.</p>
+
+    <h2 id="where-data-goes">Where data goes</h2>
+    <p>Nowhere, unless you send it. The phone app asks for no permissions at all, and its build fails if anything ever asks for a network permission. The computer app makes no connections.</p>
+
+    <h2 id="backups">Backups</h2>
+    <p>Settings › Export makes one file with everything in the app, sealed with a password you choose: AES-256-GCM, with a key made from your password by 600 000 rounds of PBKDF2-HMAC-SHA256. You choose where the file goes. Without the password nobody can open it, us included; we cannot recover a forgotten one. Settings › Import reads such a file back.</p>
+
+    <h2 id="permissions">Permissions</h2>
+    <p>None. The home-screen widgets and the "New spending" shortcut open the app's own sheets and need no permission either.</p>
+
+    <h2 id="deleting">Deleting your data</h2>
+    <p>On Android, uninstall the app or clear its storage in the system settings. On a computer, delete the folder named above. Backups you exported are yours to delete wherever you saved them.</p>
+
+    <h2 id="children">Children</h2>
+    <p>HubidubiCash collects nothing from anyone, children included.</p>
+
+    <h2 id="this-website">This website</h2>
+    <p>This site is plain pages served by GitHub Pages. It sets no cookies, runs no scripts and loads nothing from anyone else; its fonts are served from here. GitHub, as the host, may keep its own server logs under its own terms.</p>
+
+    <h2 id="changes">Changes</h2>
+    <p>If this policy changes, the new version is published here with a new effective date.</p>
+
+    <h2 id="contact">Contact</h2>
+    <p>Questions: open an issue at <a href="https://contact.hubidubicash.example">our issue tracker</a>.</p>
+  </article>
+  <aside class="toc" aria-labelledby="toc-h">
+    <nav>
+      <p id="toc-h" class="eyebrow">On this page</p>
+      <ul>
+        <li><a href="#what-the-app-stores">What the app stores, and where</a></li>
+        <li><a href="#where-data-goes">Where data goes</a></li>
+        <li><a href="#backups">Backups</a></li>
+        <li><a href="#permissions">Permissions</a></li>
+        <li><a href="#deleting">Deleting your data</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#this-website">This website</a></li>
+        <li><a href="#changes">Changes</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </aside>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/favicon.svg" alt="" width="24" height="24">HubidubiCash</a>
+    <nav aria-label="Footer">
+      <a href="download.html">Download</a>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="https://github.com/HubidubiPlanner/hubidubicash">Source code</a>
+      <a href="https://contact.hubidubicash.example">Contact</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

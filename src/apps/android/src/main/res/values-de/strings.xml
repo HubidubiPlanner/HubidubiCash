@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="spending_widget_label">Neue Ausgabe</string>
+    <string name="kind_widget_label">Eine Ausgabenart</string>
+</resources>

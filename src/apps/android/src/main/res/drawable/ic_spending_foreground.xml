@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The "New spending" shortcut: the H with a + on its badge. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group android:scaleX="0.85" android:scaleY="0.85" android:pivotX="54" android:pivotY="54">
+        <path android:fillColor="#D3C9AF" android:pathData="M38,47h9v15h14v-15h9v38h-9v-15h-14v15h-9z" />
+        <path android:fillColor="#B4997E" android:pathData="M43.5,33.5a10.5,10.5 0,1 0,21 0a10.5,10.5 0,1 0,-21 0z" />
+        <path
+            android:pathData="M48.5,33.5H59.5M54,28V39"
+            android:strokeColor="#56594D"
+            android:strokeWidth="3"
+            android:strokeLineCap="round" />
+    </group>
+</vector>

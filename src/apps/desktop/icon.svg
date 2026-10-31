@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="18 18 72 72">
+  <!-- HubidubiTask's H on moss, with a coin on its clay badge: the same family, this one about money. -->
+  <rect width="108" height="108" fill="#56594D"/>
+  <g transform="translate(54 54) scale(0.85) translate(-54 -54)">
+    <path fill="#D3C9AF" d="M38,47h9v15h14v-15h9v38h-9v-15h-14v15h-9z"/>
+    <circle cx="54" cy="33.5" r="10.5" fill="#B4997E"/>
+    <circle cx="54" cy="33.5" r="5.4" fill="none" stroke="#56594D" stroke-width="2.6"/>
+    <path d="M54,31V36" stroke="#56594D" stroke-width="2.6" stroke-linecap="round"/>
+  </g>
+</svg>

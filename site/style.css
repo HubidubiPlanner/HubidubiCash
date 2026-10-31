@@ -1,0 +1,257 @@
+/* HubidubiTask website. One typeface, the app's default Ivory theme (ivory
+   paper and terracotta, warm charcoal when dark), square corners like the
+   app's buttons and cards. Fonts and images are served from here, so no page
+   load reaches a third party. */
+
+@font-face { font-family: "Plex Sans"; src: url("fonts/plex_sans_regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Plex Sans"; src: url("fonts/plex_sans_medium.ttf") format("truetype"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Plex Sans"; src: url("fonts/plex_sans_semibold.ttf") format("truetype"); font-weight: 600 700; font-display: swap; }
+
+:root {
+  --paper: #F4F3EE; --raised: #FFFFFF; --band: #E9E7DE; --line: #D8D5CB; --ink: #141413;
+  --muted: #5E5D59; --accent: #A84E2E; --button: #B0532F; --on-button: #FFFFFF;
+  --frame: #30302E; --shadow: rgba(20, 20, 19, 0.25);
+  --sans: "Plex Sans", "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --wide: 1120px;
+  --measure: 660px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #262624; --raised: #30302E; --band: #1F1E1D; --line: #45443F; --ink: #FAF9F5;
+    --muted: #ADABA1; --accent: #E3896B; --button: #D97757; --on-button: #141413;
+    --frame: #0F0F0E; --shadow: rgba(0, 0, 0, 0.55);
+    color-scheme: dark;
+  }
+}
+[data-theme="dark"] {
+  --paper: #262624; --raised: #30302E; --band: #1F1E1D; --line: #45443F; --ink: #FAF9F5;
+  --muted: #ADABA1; --accent: #E3896B; --button: #D97757; --on-button: #141413;
+  --frame: #0F0F0E; --shadow: rgba(0, 0, 0, 0.55);
+  color-scheme: dark;
+}
+[data-theme="light"] {
+  --paper: #F4F3EE; --raised: #FFFFFF; --band: #E9E7DE; --line: #D8D5CB; --ink: #141413;
+  --muted: #5E5D59; --accent: #A84E2E; --button: #B0532F; --on-button: #FFFFFF;
+  --frame: #30302E; --shadow: rgba(20, 20, 19, 0.25);
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body, .page {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 400 18px/1.6 var(--sans);
+  font-variant-numeric: tabular-nums;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { color: var(--ink); }
+a:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3 { margin: 0; font-weight: 600; text-wrap: balance; }
+p { margin: 0; }
+ul, ol { margin: 0; padding: 0; }
+
+.wrap { max-width: var(--wide); margin: 0 auto; padding-inline: 24px; }
+.measure { max-width: var(--measure); }
+.muted { color: var(--muted); }
+.small { font-size: 15px; }
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.icon { width: 22px; height: 22px; flex: none; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+/* No bar at the top: each page starts with its content. The footer links the pages. */
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 600; font-size: 19px; }
+.brand img { width: 28px; height: 28px; }
+.site-footer { border-top: 1px solid var(--line); margin-top: 96px; padding-block: 36px 48px; color: var(--muted); font-size: 15px; }
+.site-footer .wrap { display: flex; flex-wrap: wrap; gap: 18px 32px; align-items: center; justify-content: space-between; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.site-footer a { color: var(--muted); text-decoration: none; }
+.site-footer a:hover { color: var(--ink); }
+
+/* Buttons */
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 22px;
+  background: var(--button); color: var(--on-button); border: 1.5px solid var(--button);
+  font: 600 16px/1 var(--sans); text-decoration: none; white-space: nowrap;
+}
+.btn:hover { color: var(--on-button); filter: brightness(1.07); }
+.btn-quiet { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn-quiet:hover { color: var(--ink); border-color: var(--accent); filter: none; }
+.btn-soon, .btn-soon:hover { background: transparent; color: var(--muted); border: 1.5px dashed var(--line); filter: none; cursor: default; }
+.btn .icon { width: 20px; height: 20px; }
+.btn small { font-weight: 500; opacity: 0.8; font-size: 14px; }
+
+/* Sections */
+main { display: block; }
+.section { padding-block: 72px 0; }
+.section-head { display: grid; gap: 12px; margin-bottom: 32px; }
+.section-head h2 { font-size: clamp(28px, 3.4vw, 38px); line-height: 1.15; letter-spacing: -0.01em; }
+.section-head p { color: var(--muted); max-width: var(--measure); }
+
+/* Phone frame around a real screenshot */
+.phone {
+  width: 100%; max-width: 300px; border: 9px solid var(--frame); border-radius: 38px; overflow: hidden;
+  background: var(--frame); box-shadow: 0 40px 70px -40px var(--shadow);
+}
+.phone img { width: 100%; aspect-ratio: 1 / 2; object-fit: cover; }
+
+/* Window frame around a real screenshot of the computer app */
+.desktop {
+  margin: 0 0 32px; border: 8px solid var(--frame); border-radius: 14px; overflow: hidden;
+  background: var(--frame); box-shadow: 0 40px 70px -40px var(--shadow);
+}
+.desktop img { width: 100%; height: auto; aspect-ratio: 3 / 2; }
+.desktop-below { margin: 40px 0 0; }
+
+/* Home: hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 56px; align-items: start; padding-block: 56px 24px; }
+.hero h1 { font-size: clamp(42px, 6.2vw, 72px); line-height: 1.02; letter-spacing: -0.025em; }
+.hero .lede { font-size: 21px; color: var(--muted); margin-top: 22px; max-width: 34em; }
+.hero .actions { margin-top: 32px; }
+.hero .assure { margin-top: 18px; font-size: 15px; color: var(--muted); }
+.hero .phone { justify-self: center; max-width: 320px; }
+/* Who it is for, under the buttons, beside the phone. */
+.hero .ahead { margin-top: 72px; display: grid; gap: 12px; }
+.hero .ahead h2 { font-size: clamp(28px, 3.4vw, 38px); line-height: 1.15; letter-spacing: -0.01em; }
+.hero .ahead p { color: var(--muted); max-width: var(--measure); }
+.section-near { padding-top: 40px; }
+
+/* The H of "Head" is the logo's H, with its check badge, set at the
+   title's cap height on its baseline. The plain letter is there for screen
+   readers and copying. */
+/* The H stands on the baseline at cap height; its tick sits above it, as in the icon. */
+.logo-h svg { display: inline-block; height: 1.124em; width: 0.58em; margin: 0 0.04em; vertical-align: 0; fill: currentColor; }
+.logo-h .badge { fill: var(--accent); }
+.logo-h .tick { fill: none; stroke: var(--paper); stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* Home: four steps, each with its screen */
+.steps { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; counter-reset: step; }
+.steps li { display: grid; gap: 18px; align-content: start; counter-increment: step; }
+.steps .phone { max-width: 240px; border-width: 7px; border-radius: 30px; }
+.steps h3 { font-size: 20px; display: flex; gap: 10px; align-items: baseline; }
+.steps h3::before { content: counter(step); font-size: 15px; color: var(--accent); }
+.steps p { color: var(--muted); font-size: 16px; margin-top: 6px; }
+
+/* Home: taps */
+/* Two tables side by side, one list on narrower screens. */
+.taps-box { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 56px; align-items: start; }
+.taps { width: 100%; border-collapse: collapse; }
+.taps th { text-align: left; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding: 0 0 10px; border-bottom: 1.5px solid var(--ink); }
+.taps td { padding: 13px 0; border-bottom: 1px solid var(--line); vertical-align: baseline; }
+.taps th:last-child, .taps td:last-child { text-align: right; padding-left: 16px; white-space: nowrap; }
+.taps td:last-child { font-weight: 600; font-size: 21px; color: var(--accent); }
+.taps td small { display: block; font-size: 14px; color: var(--muted); }
+
+/* Cards: plain containers like the app's */
+.cards { display: grid; gap: 16px; }
+.cards-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cards-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.card .cmd { margin-block: 4px; }
+.card { background: var(--raised); border: 1px solid var(--line); padding: 24px; display: grid; gap: 10px; align-content: start; }
+.card h3 { font-size: 20px; display: flex; gap: 10px; align-items: center; }
+.card h3 .icon { color: var(--accent); }
+.card p { color: var(--muted); font-size: 16px; }
+.card .more { margin-top: 6px; font-size: 16px; font-weight: 600; }
+.card-mark { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+
+/* Home: the closing call to get it */
+.get { background: var(--band); border-block: 1px solid var(--line); margin-top: 96px; padding-block: 64px; }
+.get .wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: center; }
+.get h2 { font-size: clamp(28px, 3.4vw, 38px); line-height: 1.15; }
+.get p { color: var(--muted); margin-top: 10px; max-width: 34em; }
+.get + .site-footer { margin-top: 0; }
+
+/* Download */
+.page-head { padding-block: 80px 8px; display: grid; gap: 16px; }
+.page-head h1 { font-size: clamp(38px, 5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; }
+.page-head .lede { font-size: 20px; color: var(--muted); max-width: 36em; }
+.platform { gap: 14px; }
+.platform h2 { font-size: 24px; display: flex; gap: 12px; align-items: center; }
+.platform h2 .icon { width: 26px; height: 26px; color: var(--accent); }
+.platform .btn { justify-self: start; margin-top: 6px; }
+.platform dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 16px; margin: 6px 0 0; font-size: 15px; }
+.platform dt { color: var(--muted); }
+.platform dd { margin: 0; }
+.free { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-button); background: var(--accent); padding: 3px 8px; }
+
+.cmd { display: block; font: 500 15px/1.55 var(--sans); background: var(--raised); border: 1px solid var(--line); padding: 12px 16px; overflow-x: auto; white-space: pre; color: var(--ink); }
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+
+/* Numbered steps */
+.numbered { list-style: none; display: grid; gap: 22px; counter-reset: n; }
+.numbered > li { display: grid; grid-template-columns: 34px minmax(0, 1fr); column-gap: 14px; row-gap: 8px; counter-increment: n; }
+.numbered > li::before {
+  content: counter(n); grid-row: span 3; width: 28px; height: 28px; margin-top: 1px;
+  border: 1.5px solid var(--accent); border-radius: 50%; color: var(--accent);
+  display: grid; place-items: center; font-size: 14px; font-weight: 600;
+}
+.numbered h3 { font-size: 18px; }
+.numbered p { color: var(--muted); font-size: 16px; }
+.numbered .cmd { margin-top: 2px; }
+
+/* Lists of short facts */
+.ticks { list-style: none; display: grid; gap: 12px; }
+.ticks li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 12px; align-items: start; }
+.ticks .icon { margin-top: 3px; color: var(--accent); }
+.ticks .no { color: var(--muted); }
+
+/* Privacy policy and other long text */
+.doc { max-width: var(--measure); padding-top: 80px; }
+.doc h1 { font-size: clamp(36px, 5vw, 52px); line-height: 1.05; letter-spacing: -0.02em; }
+.doc .meta { color: var(--muted); font-size: 15px; margin: 14px 0 32px; }
+.doc h2 { font-size: 24px; margin: 48px 0 12px; }
+.doc p, .doc li { margin: 0 0 12px; }
+.doc ul { padding-left: 22px; }
+.summary { background: var(--raised); border: 1px solid var(--line); padding: 24px 26px; font-size: 19px; }
+.summary p + p { margin-top: 10px; }
+.table-box { overflow-x: auto; border: 1px solid var(--line); background: var(--raised); margin: 4px 0 12px; }
+.table-box table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 15px; }
+.table-box th, .table-box td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+.table-box tr:last-child td { border-bottom: 0; }
+.table-box th { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+
+/* The policy, with its contents beside it on a wide screen */
+.doc-layout { display: grid; grid-template-columns: minmax(0, var(--measure)) 220px; gap: 72px; justify-content: space-between; }
+.toc nav { position: sticky; top: 24px; padding-top: 88px; display: grid; gap: 12px; }
+.toc ul { list-style: none; display: grid; gap: 8px; border-left: 1px solid var(--line); padding-left: 16px; }
+.toc a { color: var(--muted); text-decoration: none; font-size: 15px; }
+.toc a:hover { color: var(--ink); }
+
+/* Narrower screens */
+@media (max-width: 1040px) {
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cards-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-top: 48px; }
+  .hero .phone { max-width: 280px; }
+  .hero .ahead { margin-top: 48px; }
+  .cards-3, .cards-2 { grid-template-columns: minmax(0, 1fr); }
+  .split { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .taps-box { grid-template-columns: minmax(0, 1fr); }
+  .taps + .taps thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .doc-layout { grid-template-columns: minmax(0, 1fr); }
+  .toc { display: none; }
+  .get .wrap { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 640px) {
+  body, .page { font-size: 17px; }
+  .wrap { padding-inline: 16px; }
+  .hero .lede { font-size: 19px; }
+  .page-head, .doc { padding-top: 48px; }
+  .section { padding-top: 56px; }
+  /* The steps scroll sideways on a phone, one screen at a time. */
+  .steps { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 74%; overflow-x: auto;
+           scroll-snap-type: x mandatory; padding-bottom: 12px; }
+  .steps li { scroll-snap-align: start; }
+  .cards-4 { grid-template-columns: minmax(0, 1fr); }
+  .card { padding: 20px; }
+  .get { margin-top: 72px; padding-block: 48px; }
+  .btn { width: 100%; }
+  .platform .btn { width: auto; }
+}
+
+@media (prefers-reduced-motion: no-preference) { .btn { transition: filter .15s, border-color .15s; } }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The kind widget's preview in the widget list, and its look before a kind
+     is chosen: a dark circle with a coin. Once placed it shows its kind. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="61dp"
+    android:height="61dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    <path android:fillColor="#1E1B19" android:pathData="M0,36a36,36 0,1 0,72 0a36,36 0,1 0,-72 0z" />
+    <path
+        android:pathData="M25,36a11,11 0,1 0,22 0a11,11 0,1 0,-22 0z"
+        android:strokeColor="#F7EFEC"
+        android:strokeWidth="3.2" />
+    <path
+        android:pathData="M36,31V41"
+        android:strokeColor="#F7EFEC"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round" />
+</vector>

@@ -1,0 +1,27 @@
+# The tests, the phone app's build and its no-network check, on every push
+# and pull request. The UI tests draw Compose scenes off screen. The runner
+# image has the Android SDK (ANDROID_HOME), which the phone app needs.
+name: Test
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: gradle
+      - name: Tests, the phone app, and its no-network check
+        working-directory: src/apps
+        run: xvfb-run -a ./gradlew --no-daemon :shared:desktopTest :desktop:test :android:assembleDebug :android:checkDebugPermissions

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Moss, HubidubiTask's icon ground: the two apps' icons sit side by side as one family. -->
+    <color name="ic_launcher_background">#56594D</color>
+</resources>

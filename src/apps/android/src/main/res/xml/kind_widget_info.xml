@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="40dp"
+    android:minHeight="40dp"
+    android:targetCellWidth="1"
+    android:targetCellHeight="1"
+    android:updatePeriodMillis="0"
+    android:initialLayout="@layout/widget_kind"
+    android:previewImage="@drawable/ic_kind_round"
+    android:description="@string/kind_widget_label"
+    android:configure="com.hubidubicash.mobile.capture.KindWidgetConfigureActivity"
+    android:widgetFeatures="reconfigurable"
+    android:resizeMode="none"
+    android:widgetCategory="home_screen" />
